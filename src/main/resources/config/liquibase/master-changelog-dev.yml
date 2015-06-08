@@ -1,0 +1,103 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20150430110000
+      author: bsauvan
+      changes:
+        - createTable:
+            tableName: T_JBEUSER
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: LOGIN
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PASSWORD
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: TOKEN
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: TOKEN_DATE
+                  type: timestamp
+                  constraints:
+                    nullable: true
+        - createSequence:
+            incrementBy: 1
+            ordered: true
+            sequenceName: SEQ_JBEUSER
+            startValue: 1
+        - sql:
+            sql: ALTER SEQUENCE SEQ_JBEUSER NOCACHE;
+        - createTable:
+            tableName: T_JBECONF
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: VALUE
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PART_NUMBER
+                  type: int
+                  constraints:
+                    nullable: false
+        - createSequence:
+            incrementBy: 1
+            ordered: true
+            sequenceName: SEQ_JBECONF
+            startValue: 1
+        - sql:
+            sql: ALTER SEQUENCE SEQ_JBECONF NOCACHE;
+        - insert:
+            tableName: T_JBEUSER
+            columns:
+              - column:
+                   name: ID
+                   valueComputed: SEQ_JBEUSER.NEXTVAL
+              - column:
+                   name: LOGIN
+                   value: admin
+              - column:
+                   name: PASSWORD
+                   value: hQUnf5fFg/Umx88TWThsq5Ez5LaHL+IP
+        - insert:
+            tableName: T_JBECONF
+            columns:
+              - column:
+                   name: ID
+                   valueComputed: SEQ_JBECONF.NEXTVAL
+              - column:
+                   name: VALUE
+                   value: 8FAGUAr3yF4OIL1VKZKXOcINw/c4C62c
+              - column:
+                   name: PART_NUMBER
+                   value: 2
+        - insert:
+            tableName: T_JBECONF
+            columns:
+              - column:
+                   name: ID
+                   valueComputed: SEQ_JBECONF.NEXTVAL
+              - column:
+                   name: VALUE
+                   value: WOm3CBErypzBRHjb7ibIMs6M5MD/ip4W
+              - column:
+                   name: PART_NUMBER
+                   value: 3

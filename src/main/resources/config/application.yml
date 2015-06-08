@@ -1,0 +1,15 @@
+info:
+    app:
+        version: v_00.01.01.0000
+        description: JBancEcho Web service
+        name: JBancEcho@digital
+
+webservices:
+    rootPath: /jbancecho
+    soapPath: ${webservices.rootPath}/soap
+    restPath: ${webservices.rootPath}/rest
+
+endpoints:
+    jmx:
+        unique-names: true
+

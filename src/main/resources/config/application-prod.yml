@@ -1,0 +1,72 @@
+server:
+    port: 8080
+
+spring:
+    profiles: prod
+    datasource:
+        driverClassName: oracle.jdbc.OracleDriver
+        dataSourceClassName: oracle.jdbc.pool.OracleDataSource
+        url: jdbc:oracle:thin:@127.0.0.1:1521:BANCADB
+        serverName: 127.0.0.1
+        databaseName: BANCADB
+        username: bncdba
+        password: rpyNEtybyju6CSCvNwrYHg==
+    jpa:
+        database-platform: org.hibernate.dialect.Oracle10gDialect
+        database: ORACLE
+        openInView: false
+        show_sql: false
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        properties:
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            hibernate.cache.use_minimal_puts: true
+
+logging:
+    config: classpath:config/logging/logback-prod.xml
+    file: ${catalina.home}/logs/jbancecho
+    level:
+        root: INFO
+        ch.qos.logback: WARN
+        com.sun.xml.bind: WARN
+        com.zaxxer.hikari: WARN
+        com.zaxxer.hikari.proxy.ConnectionProxy: ERROR
+        javax.activation: WARN
+        javax.xml.bind: WARN
+        liquibase: WARN
+        org.apache: WARN
+        org.apache.catalina.startup.DigesterFactory: ERROR
+        org.apache.commons.beanutils.converters: ERROR
+        org.apache.cxf: INFO
+        org.apache.cxf.common: WARN
+        org.apache.cxf.configuration: WARN
+        org.apache.cxf.interceptor: WARN
+        org.apache.cxf.phase: WARN
+        org.apache.cxf.jaxb: WARN
+        org.apache.cxf.jaxws: WARN
+        org.apache.cxf.resource: WARN
+        org.apache.cxf.transport: WARN
+        org.dozer: ERROR
+        org.hibernate: WARN
+        org.hibernate.ejb.HibernatePersistence: ERROR
+        org.hibernate.validator: WARN
+        org.jboss: WARN
+        org.springframework: WARN
+
+authentication:
+    permanentServerToken: tHgh029935kb4inPgSRfI6HkzyOfCks6qF5YZU1Qxn27Gl20nO1nAhlUjLmKFYzAMNiHz8ovzjM=
+    tokenExpirationTime: 600000
+    scheduleTime: 600000
+
+security:
+    firstPasswordPart: hYs2J01QhG2MtoSLueklHwPx8pzPOT9t
+    keystorePath: /bancaResources/security/jbancecho-keystore.jks
+    serverIps:
+        - "127.0.0.1:8080"
+
+jbancWebService:
+    wsdlLocation: http://localhost:8080/jbancweb/jbanc/soap/goalSolutionManagement?wsdl

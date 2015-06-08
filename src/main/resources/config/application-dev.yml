@@ -1,0 +1,66 @@
+server:
+    port: 8080
+
+spring:
+    profiles: dev
+    datasource:
+        driverClassName: oracle.jdbc.OracleDriver
+        dataSourceClassName: oracle.jdbc.pool.OracleDataSource
+        url: jdbc:oracle:thin:@127.0.0.1:1521:XE
+        serverName: 127.0.0.1
+        databaseName: BANCA
+        username: banca
+        password: 2EWb+VJQpX4XRocyfRAxMQ==
+    jpa:
+        database-platform: org.hibernate.dialect.Oracle10gDialect
+        database: ORACLE
+        openInView: false
+        show_sql: false
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        properties:
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            hibernate.cache.use_minimal_puts: true
+
+logging:
+    config: classpath:config/logging/logback-dev.xml
+    level:
+        root: DEBUG
+        ch.qos.logback: WARN
+        com.sun.xml.bind: WARN
+        com.zaxxer.hikari: WARN
+        com.zaxxer.hikari.proxy.ConnectionProxy: ERROR
+        javax.activation: WARN
+        javax.xml.bind: WARN
+        liquibase: WARN
+        org.apache: WARN
+        org.apache.catalina.startup.DigesterFactory: ERROR
+        org.apache.commons.beanutils.converters: ERROR
+        org.apache.cxf: DEBUG
+        org.apache.cxf.common: WARN
+        org.apache.cxf.configuration: WARN
+        org.apache.cxf.interceptor: WARN
+        org.apache.cxf.phase: WARN
+        org.apache.cxf.jaxb: WARN
+        org.apache.cxf.jaxws: WARN
+        org.apache.cxf.resource: WARN
+        org.apache.cxf.transport: WARN
+        org.dozer: ERROR
+        org.hibernate: WARN
+        org.hibernate.ejb.HibernatePersistence: ERROR
+        org.hibernate.hql.internal.ast.QueryTranslatorImpl: DEBUG
+        org.hibernate.validator: WARN
+        org.jboss: WARN
+        org.springframework: WARN
+
+jasypt:
+    password: JBEnwqQ)lPvES6OI#f!?
+
+authentication:
+    permanentServerToken: tHgh029935kb4inPgSRfI6HkzyOfCks6qF5YZU1Qxn27Gl20nO1nAhlUjLmKFYzAMNiHz8ovzjM=
+    tokenExpirationTime: 300000
+    scheduleTime: 600000
