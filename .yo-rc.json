@@ -1,163 +1,39 @@
 {
   "generator-jhipster": {
-    "jhipsterVersion": "4.0.8",
+    "promptValues": {
+      "packageName": "com.gusnot.cloudstock",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "4.9.0",
     "baseName": "cloudstock",
     "packageName": "com.gusnot.cloudstock",
     "packageFolder": "com/gusnot/cloudstock",
     "serverPort": "8080",
-    "authenticationType": "session",
+    "authenticationType": "jwt",
     "hibernateCache": "no",
     "clusteredHttpSession": false,
-    "websocket": false,
+    "websocket": "spring-websocket",
     "databaseType": "sql",
     "devDatabaseType": "mysql",
     "prodDatabaseType": "mysql",
-    "searchEngine": false,
-    "messageBroker": false,
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
     "serviceDiscoveryType": false,
     "buildTool": "maven",
-    "enableSocialSignIn": false,
-    "rememberMeKey": "9fec55dbaeb0ab114b4f5d10625eb89e2e0fbcb9",
-    "clientFramework": "angular1",
+    "enableSocialSignIn": true,
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "10aaaabf9dc667b21fbca46c2ad5d190f197743f",
+    "clientFramework": "angularX",
     "useSass": true,
     "clientPackageManager": "yarn",
     "applicationType": "monolith",
     "testFrameworks": [],
     "jhiPrefix": "jhi",
-    "otherModules": [
-      {
-        "name": "generator-jhipster-module",
-        "version": "1.1.0"
-      },
-      {
-        "name": "generator-jhipster-docker",
-        "version": "2.2.0"
-      },
-      {
-        "name": "generator-jhipster-ci",
-        "version": "1.0.0"
-      },
-      {
-        "name": "generator-jhipster-nav-element",
-        "version": "0.1.9"
-      },
-      {
-        "name": "generator-jhipster-bootstrap-material-design",
-        "version": "3.5.1"
-      },
-      {
-        "name": "generator-jhipster-ionic",
-        "version": "2.2.1"
-      },
-      {
-        "name": "generator-jhipster-swagger2markup",
-        "version": "1.1.0"
-      },
-      {
-        "name": "generator-jhipster-leaflet",
-        "version": "1.0.0"
-      },
-      {
-        "name": "generator-jhipster-swagger-cli",
-        "version": "2.0.5"
-      },
-      {
-        "name": "generator-jhipster-transasia",
-        "version": "1.0.6"
-      },
-      {
-        "name": "generator-jhipster-compodoc",
-        "version": "0.0.1"
-      },
-      {
-        "name": "generator-jhipster-stormpath",
-        "version": "0.0.3"
-      },
-      {
-        "name": "generator-jhipster-angular-datatables",
-        "version": "1.3.8"
-      },
-      {
-        "name": "generator-jhipster-grpc",
-        "version": "0.6.0"
-      },
-      {
-        "name": "generator-jhipster-entity-audit",
-        "version": "2.4.0"
-      },
-      {
-        "name": "generator-jhipster-vuejs",
-        "version": "0.0.3"
-      },
-      {
-        "name": "generator-jhipster-entity-audit-and-delete",
-        "version": "2.2.2"
-      },
-      {
-        "name": "generator-jhipster-mssql",
-        "version": "2.1.2"
-      },
-      {
-        "name": "generator-jhipster-darktheme",
-        "version": "0.0.7"
-      },
-      {
-        "name": "generator-jhipster-elasticsearch-reindexer",
-        "version": "0.3.0"
-      },
-      {
-        "name": "generator-jhipster-bootswatch",
-        "version": "1.0.2"
-      },
-      {
-        "name": "generator-jhipster-spring-social-connectors",
-        "version": "0.0.1"
-      },
-      {
-        "name": "generator-jhipster-material",
-        "version": "0.0.0"
-      },
-      {
-        "name": "generator-jhipster-gitlab-ci-build-status",
-        "version": "0.0.1"
-      },
-      {
-        "name": "generator-jhipster-basic-auth",
-        "version": "1.0.1"
-      },
-      {
-        "name": "generator-jhipster-fortune",
-        "version": "0.0.2"
-      },
-      {
-        "name": "generator-jhipster-debian-packager",
-        "version": "1.0.1"
-      },
-      {
-        "name": "generator-jhipster-react",
-        "version": "0.0.0"
-      },
-      {
-        "name": "generator-jhipster-angular-ui",
-        "version": "0.0.2"
-      },
-      {
-        "name": "generator-jhipster-google-analytics",
-        "version": "0.0.1"
-      },
-      {
-        "name": "generator-jhipster-google-maps",
-        "version": "0.0.1"
-      },
-      {
-        "name": "generator-jhipster-webservice",
-        "version": "0.1.0"
-      }
-    ],
     "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": [
-      "en"
+      "en",
+      "th"
     ]
   }
 }

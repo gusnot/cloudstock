@@ -1,11 +1,11 @@
 # ===================================================================
 # Spring Boot configuration.
 #
-# This configuration will be overriden by the Spring profile you use,
+# This configuration will be overridden by the Spring profile you use,
 # for example application-dev.yml if you use the "dev" profile.
 #
-# More information on profiles: https://jhipster.github.io/profiles/
-# More information on configuration properties: https://jhipster.github.io/common-application-properties/
+# More information on profiles: http://www.jhipster.tech/profiles/
+# More information on configuration properties: http://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
 # ===================================================================
@@ -21,6 +21,8 @@ management:
     health:
         mail:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
+        binders:
+            enabled: true
 spring:
     application:
         name: cloudstock
@@ -45,6 +47,23 @@ spring:
             enabled: false
     thymeleaf:
         mode: XHTML
+    social:
+        # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
+        google:
+            client-id: xxx
+            client-secret: xxx
+
+        # see https://developers.facebook.com/docs/facebook-login/v2.2
+        facebook:
+            client-id: xxx
+            client-secret: xxx
+
+        # see https://apps.twitter.com/app/
+        twitter:
+            client-id: xxx
+            client-secret: xxx
+
+        # jhipster-needle-add-social-configuration
 
 security:
     basic:
@@ -62,7 +81,7 @@ info:
 # ===================================================================
 # JHipster specific properties
 #
-# Full reference is available at: https://jhipster.github.io/common-application-properties/
+# Full reference is available at: http://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
 jhipster:
@@ -91,6 +110,8 @@ jhipster:
         contact-email:
         license:
         license-url:
+    social:
+        redirect-after-sign-in: "/#/social-auth"
     ribbon:
         display-on-active-profiles: dev
 
@@ -100,7 +121,7 @@ jhipster:
 # to have type-safe configuration, like in the JHipsterProperties above
 #
 # More documentation is available at:
-# https://jhipster.github.io/common-application-properties/
+# http://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
 application:
