@@ -1,0 +1,18 @@
+entity Product {
+	name String,
+    prefix String
+}
+
+entity ProductType {
+	name String,
+    prefix String
+}
+
+relationship OneToOne {
+	Product{productType} to ProductType
+}
+
+dto * with mapstruct
+
+// Set an angular suffix
+angularSuffix * with mySuffix
