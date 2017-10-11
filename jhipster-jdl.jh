@@ -1,18 +1,117 @@
+entity Attribute {
+	name String required
+}
+
+entity AttributeItem {
+	name String required,
+    prefix String required maxlength(3)
+}
+
 entity Product {
-	name String,
-    prefix String
+	name String required
 }
 
 entity ProductType {
-	name String,
-    prefix String
+	name String required,
+    prefix String required maxlength(3)
+}
+
+entity Sku {
+	price BigDecimal required,
+    cost BigDecimal,
+    code String required,
+    barcode String 
+}
+
+entity Branch {
+	name String required,
+    prefix String required maxlength(3),
+    address String
+}
+
+entity Stock {
+	amount BigDecimal required
+}
+
+entity Transfer {
+	refNo String required,
+    status TransactionStatus required
+}
+
+entity TransferItem {
+	amount BigDecimal required
+}
+
+entity Transaction {
+	refNo String required,
+    status TransactionStatus required,
+    type TransactionType required,
+    reason String
+}
+
+entity TransactionItem {
+	amount BigDecimal required
+}
+
+entity Bill {
+	refNo String required,
+    type BillStatus required
+}
+
+entity BillItem {
+	sellPrice BigDecimal required,
+    sellCost BigDecimal required
+}
+
+entity Sell {
+	refNo String required,
+	status SellStatus
+}
+
+entity AppConfig {
+	key String required,
+    value String
+}
+
+enum TransactionStatus {
+    ASSIGNED, APPROVED, REJECTED
+}
+
+enum TransactionType {
+    ADD, DELETE, ADJUST, COUNT
+}
+
+enum BillStatus {
+    SELLING, WAITING, CANCELLED, SOLD, VOIDED
+}
+
+enum SellStatus {
+    OPENED, CLOSED
+}
+
+relationship OneToMany {
+	Attribute{attributeItems} to AttributeItem,
+    Product{attribute} to Attribute,
+    Transfer{transferItem} to TransferItem{transfer},
+    Transaction{transactionItem} to TransactionItem{transaction},
+    Bill{billItem} to BillItem{Bill},
+    Sell{bill} to Bill{sell}
 }
 
 relationship OneToOne {
-	Product{productType} to ProductType
+	Product{productType(name)} to ProductType,
+    Sku{product} to Product,
+    Stock{sku} to Sku,
+    Stock{branch} to Branch,
+    Transfer{srcBranch(name)} to Branch,
+    Transfer{destBranch(name)} to Branch,
+    TransferItem{sku} to Sku,
+    Transaction{branch(name)} to Branch,
+    TransactionItem{sku} to Sku,
+    Bill{branch} to Branch,
+    BillItem{sku} to Sku,
+    Sell{branch} to Branch
 }
 
 dto * with mapstruct
-
-// Set an angular suffix
-angularSuffix * with mySuffix
+service * with serviceImpl
