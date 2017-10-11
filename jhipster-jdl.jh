@@ -20,7 +20,7 @@ entity Sku {
 	price BigDecimal required,
     cost BigDecimal,
     code String required,
-    barcode String 
+    barcode String
 }
 
 entity Branch {
@@ -113,5 +113,7 @@ relationship OneToOne {
     Sell{branch} to Branch
 }
 
+skipClient for AttributeItem, TransferItem, TransactionItem, BillItem
+paginate Product, Sku, Stock, Transfer, Transaction, Bill, Sell with pagination
 dto * with mapstruct
 service * with serviceImpl
