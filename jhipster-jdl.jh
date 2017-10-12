@@ -46,7 +46,7 @@ entity Transaction {
 	refNo String required,
     status TransactionStatus required,
     type TransactionType required,
-    reason String
+    reason String maxlength(500)
 }
 
 entity TransactionItem {
@@ -91,7 +91,6 @@ enum SellStatus {
 
 relationship OneToMany {
 	Attribute{attributeItems} to AttributeItem,
-    Product{attribute} to Attribute,
     Transfer{transferItem} to TransferItem{transfer},
     Transaction{transactionItem} to TransactionItem{transaction},
     Bill{billItem} to BillItem{Bill},
@@ -99,18 +98,25 @@ relationship OneToMany {
 }
 
 relationship OneToOne {
+    Stock{sku} to Sku
+}
+
+relationship ManyToOne {
+	Sku{product} to Product,
+    TransferItem{sku} to Sku,
 	Product{productType(name)} to ProductType,
-    Sku{product} to Product,
-    Stock{sku} to Sku,
-    Stock{branch} to Branch,
     Transfer{srcBranch(name)} to Branch,
     Transfer{destBranch(name)} to Branch,
-    TransferItem{sku} to Sku,
     Transaction{branch(name)} to Branch,
     TransactionItem{sku} to Sku,
+    Stock{branch} to Branch,
     Bill{branch} to Branch,
     BillItem{sku} to Sku,
     Sell{branch} to Branch
+}
+
+relationship ManyToMany {
+	Product{attribute} to Attribute
 }
 
 skipClient for AttributeItem, TransferItem, TransactionItem, BillItem
