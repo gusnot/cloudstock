@@ -90,7 +90,7 @@ enum SellStatus {
 }
 
 relationship OneToMany {
-	Attribute{attributeItems} to AttributeItem,
+	Attribute{attributeItems(name)} to AttributeItem,
     Transfer{transferItem} to TransferItem{transfer},
     Transaction{transactionItem} to TransactionItem{transaction},
     Bill{billItem} to BillItem{Bill},
@@ -102,24 +102,23 @@ relationship OneToOne {
 }
 
 relationship ManyToOne {
-	Sku{product} to Product,
-    TransferItem{sku} to Sku,
+	Sku{product(name)} to Product,
+    TransferItem{sku(name)} to Sku,
 	Product{productType(name)} to ProductType,
     Transfer{srcBranch(name)} to Branch,
     Transfer{destBranch(name)} to Branch,
     Transaction{branch(name)} to Branch,
-    TransactionItem{sku} to Sku,
-    Stock{branch} to Branch,
-    Bill{branch} to Branch,
-    BillItem{sku} to Sku,
-    Sell{branch} to Branch
+    TransactionItem{sku(name)} to Sku,
+    Stock{branch(name)} to Branch,
+    Bill{branch(name)} to Branch,
+    BillItem{sku(name)} to Sku,
+    Sell{branch(name)} to Branch
 }
 
 relationship ManyToMany {
-	Product{attribute} to Attribute
+	Product{attribute(name)} to Attribute
 }
 
-skipClient for AttributeItem, TransferItem, TransactionItem, BillItem
 paginate Product, Sku, Stock, Transfer, Transaction, Bill, Sell with pagination
 dto * with mapstruct
 service * with serviceImpl
