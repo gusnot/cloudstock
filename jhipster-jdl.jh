@@ -98,20 +98,20 @@ relationship OneToMany {
 }
 
 relationship OneToOne {
-    Stock{sku} to Sku
+    Stock{sku(code)} to Sku
 }
 
 relationship ManyToOne {
 	Sku{product(name)} to Product,
-    TransferItem{sku(name)} to Sku,
+    TransferItem{sku(code)} to Sku,
 	Product{productType(name)} to ProductType,
     Transfer{srcBranch(name)} to Branch,
     Transfer{destBranch(name)} to Branch,
     Transaction{branch(name)} to Branch,
-    TransactionItem{sku(name)} to Sku,
+    TransactionItem{sku(code)} to Sku,
     Stock{branch(name)} to Branch,
     Bill{branch(name)} to Branch,
-    BillItem{sku(name)} to Sku,
+    BillItem{sku(code)} to Sku,
     Sell{branch(name)} to Branch
 }
 
