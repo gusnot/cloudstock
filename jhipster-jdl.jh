@@ -90,11 +90,11 @@ enum SellStatus {
 }
 
 relationship OneToMany {
-	Attribute{attributeItems(name)} to AttributeItem,
-    Transfer{transferItem} to TransferItem{transfer},
-    Transaction{transactionItem} to TransactionItem{transaction},
-    Bill{billItem} to BillItem{Bill},
-    Sell{bill} to Bill{sell}
+	Attribute{attributeItems(name)} to AttributeItem{attribute(name)},
+    Transfer{transferItem} to TransferItem{transfer(refNo)},
+    Transaction{transactionItem} to TransactionItem{transaction(refNo)},
+    Bill{billItem} to BillItem{Bill(refNo)},
+    Sell{bill} to Bill{sell(refNo)}
 }
 
 relationship OneToOne {
