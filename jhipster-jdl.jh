@@ -60,12 +60,12 @@ entity Bill {
 
 entity BillItem {
 	sellPrice BigDecimal required,
-    sellCost BigDecimal required
+    sellCost BigDecimal
 }
 
 entity Sell {
 	refNo String required,
-	status SellStatus
+	status SellStatus required
 }
 
 entity AppConfig {
