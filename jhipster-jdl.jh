@@ -97,10 +97,6 @@ relationship OneToMany {
     Sell{bill} to Bill{sell(refNo)}
 }
 
-relationship OneToOne {
-    Stock{sku(code)} to Sku
-}
-
 relationship ManyToOne {
 	Sku{product(name)} to Product,
     TransferItem{sku(code)} to Sku,
@@ -110,6 +106,7 @@ relationship ManyToOne {
     Transaction{branch(name)} to Branch,
     TransactionItem{sku(code)} to Sku,
     Stock{branch(name)} to Branch,
+    Stock{sku(code)} to Sku,
     Bill{branch(name)} to Branch,
     BillItem{sku(code)} to Sku,
     Sell{branch(name)} to Branch
