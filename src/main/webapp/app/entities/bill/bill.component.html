@@ -1,0 +1,91 @@
+<div>
+    <h2>
+        <span jhiTranslate="cloudstockApp.bill.home.title">Bills</span>
+        <button class="btn btn-primary float-right jh-create-entity create-bill" [routerLink]="['/', { outlets: { popup: ['bill-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="cloudstockApp.bill.home.createLabel">
+            Create new Bill
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'cloudstockApp.bill.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="bills">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="refNo"><span jhiTranslate="cloudstockApp.bill.refNo">Ref No</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="type"><span jhiTranslate="cloudstockApp.bill.type">Type</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="branchName"><span jhiTranslate="cloudstockApp.bill.branch">Branch</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="sellRefNo"><span jhiTranslate="cloudstockApp.bill.sell">Sell</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let bill of bills ;trackBy: trackId">
+                <td><a [routerLink]="['../bill', bill.id ]">{{bill.id}}</a></td>
+                <td>{{bill.refNo}}</td>
+                <td jhiTranslate="{{'cloudstockApp.BillStatus.' + bill.type}}">{{bill.type}}</td>
+                <td>
+                    <div *ngIf="bill.branchId">
+                        <a [routerLink]="['../branch', bill.branchId  ]" >{{bill.branchName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="bill.sellId">
+                        <a [routerLink]="['../sell', bill.sellId  ]" >{{bill.sellRefNo}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../bill', bill.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'bill/'+ bill.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'bill/'+ bill.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="bills && bills.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

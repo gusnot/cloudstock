@@ -1,0 +1,66 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myBillLabel" jhiTranslate="cloudstockApp.bill.home.createOrEditLabel">Create or edit a Bill</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!bill.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="bill.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="cloudstockApp.bill.refNo" for="field_refNo">Ref No</label>
+            <input type="text" class="form-control" name="refNo" id="field_refNo"
+                [(ngModel)]="bill.refNo" required />
+            <div [hidden]="!(editForm.controls.refNo?.dirty && editForm.controls.refNo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.refNo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="cloudstockApp.bill.type" for="field_type">Type</label>
+            <select class="form-control" name="type" [(ngModel)]="bill.type" id="field_type"  required>
+                <option value="SELLING">{{'cloudstockApp.BillStatus.SELLING' | translate}}</option>
+                <option value="WAITING">{{'cloudstockApp.BillStatus.WAITING' | translate}}</option>
+                <option value="CANCELLED">{{'cloudstockApp.BillStatus.CANCELLED' | translate}}</option>
+                <option value="SOLD">{{'cloudstockApp.BillStatus.SOLD' | translate}}</option>
+                <option value="VOIDED">{{'cloudstockApp.BillStatus.VOIDED' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.type?.dirty && editForm.controls.type?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.type?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="cloudstockApp.bill.branch" for="field_branch">Branch</label>
+            <select class="form-control" id="field_branch" name="branch" [(ngModel)]="bill.branchId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="branchOption.id" *ngFor="let branchOption of branches; trackBy: trackBranchById">{{branchOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="cloudstockApp.bill.sell" for="field_sell">Sell</label>
+            <select class="form-control" id="field_sell" name="sell" [(ngModel)]="bill.sellId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="sellOption.id" *ngFor="let sellOption of sells; trackBy: trackSellById">{{sellOption.refNo}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,41 @@
+
+<div *ngIf="transfer">
+    <h2><span jhiTranslate="cloudstockApp.transfer.detail.title">Transfer</span> {{transfer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="cloudstockApp.transfer.refNo">Ref No</span></dt>
+        <dd>
+            <span>{{transfer.refNo}}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudstockApp.transfer.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'cloudstockApp.TransactionStatus.' + transfer.status}}">{{transfer.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudstockApp.transfer.srcBranch">Src Branch</span></dt>
+        <dd>
+            <div *ngIf="transfer.srcBranchId">
+                <a [routerLink]="['/branch', transfer.srcBranchId]">{{transfer.srcBranchName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="cloudstockApp.transfer.destBranch">Dest Branch</span></dt>
+        <dd>
+            <div *ngIf="transfer.destBranchId">
+                <a [routerLink]="['/branch', transfer.destBranchId]">{{transfer.destBranchName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'transfer/'+ transfer.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

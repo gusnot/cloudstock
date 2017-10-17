@@ -1,0 +1,23 @@
+{
+    "cloudstockApp": {
+        "attribute" : {
+            "home": {
+                "title": "Attributes",
+                "createLabel": "สร้าง Attribute",
+                "createOrEditLabel": "สร้างหรือแก้ไข Attribute",
+                "search": "ค้นหา Attribute"
+            },
+            "created": "Attribute ถูกสร้างด้วย {{ param }}",
+            "updated": "Attribute ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Attribute ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Attribute {{ id }}?"
+            },
+            "detail": {
+                "title": "Attribute"
+            },
+            "name": "Name",
+            "attributeItems": "Attribute Items"
+        }
+    }
+}

@@ -1,0 +1,83 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTransactionLabel" jhiTranslate="cloudstockApp.transaction.home.createOrEditLabel">Create or edit a Transaction</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!transaction.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="transaction.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="cloudstockApp.transaction.refNo" for="field_refNo">Ref No</label>
+            <input type="text" class="form-control" name="refNo" id="field_refNo"
+                [(ngModel)]="transaction.refNo" required />
+            <div [hidden]="!(editForm.controls.refNo?.dirty && editForm.controls.refNo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.refNo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="cloudstockApp.transaction.status" for="field_status">Status</label>
+            <select class="form-control" name="status" [(ngModel)]="transaction.status" id="field_status"  required>
+                <option value="ASSIGNED">{{'cloudstockApp.TransactionStatus.ASSIGNED' | translate}}</option>
+                <option value="APPROVED">{{'cloudstockApp.TransactionStatus.APPROVED' | translate}}</option>
+                <option value="REJECTED">{{'cloudstockApp.TransactionStatus.REJECTED' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.status?.dirty && editForm.controls.status?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.status?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="cloudstockApp.transaction.type" for="field_type">Type</label>
+            <select class="form-control" name="type" [(ngModel)]="transaction.type" id="field_type"  required>
+                <option value="ADD">{{'cloudstockApp.TransactionType.ADD' | translate}}</option>
+                <option value="DELETE">{{'cloudstockApp.TransactionType.DELETE' | translate}}</option>
+                <option value="ADJUST">{{'cloudstockApp.TransactionType.ADJUST' | translate}}</option>
+                <option value="COUNT">{{'cloudstockApp.TransactionType.COUNT' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.type?.dirty && editForm.controls.type?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.type?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="cloudstockApp.transaction.reason" for="field_reason">Reason</label>
+            <input type="text" class="form-control" name="reason" id="field_reason"
+                [(ngModel)]="transaction.reason" maxlength="500" />
+            <div [hidden]="!(editForm.controls.reason?.dirty && editForm.controls.reason?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.reason?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 500 }">
+                   This field cannot be longer than 500 characters.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="cloudstockApp.transaction.branch" for="field_branch">Branch</label>
+            <select class="form-control" id="field_branch" name="branch" [(ngModel)]="transaction.branchId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="branchOption.id" *ngFor="let branchOption of branches; trackBy: trackBranchById">{{branchOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+{
+    "cloudstockApp": {
+        "transfer" : {
+            "home": {
+                "title": "Transfers",
+                "createLabel": "สร้าง Transfer",
+                "createOrEditLabel": "สร้างหรือแก้ไข Transfer",
+                "search": "ค้นหา Transfer"
+            },
+            "created": "Transfer ถูกสร้างด้วย {{ param }}",
+            "updated": "Transfer ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Transfer ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Transfer {{ id }}?"
+            },
+            "detail": {
+                "title": "Transfer"
+            },
+            "refNo": "Ref No",
+            "status": "Status",
+            "transferItem": "Transfer Item",
+            "srcBranch": "Src Branch",
+            "destBranch": "Dest Branch"
+        }
+    }
+}

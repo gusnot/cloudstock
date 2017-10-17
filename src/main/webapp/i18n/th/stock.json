@@ -1,0 +1,24 @@
+{
+    "cloudstockApp": {
+        "stock" : {
+            "home": {
+                "title": "Stocks",
+                "createLabel": "สร้าง Stock",
+                "createOrEditLabel": "สร้างหรือแก้ไข Stock",
+                "search": "ค้นหา Stock"
+            },
+            "created": "Stock ถูกสร้างด้วย {{ param }}",
+            "updated": "Stock ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Stock ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Stock {{ id }}?"
+            },
+            "detail": {
+                "title": "Stock"
+            },
+            "amount": "Amount",
+            "branch": "Branch",
+            "sku": "Sku"
+        }
+    }
+}

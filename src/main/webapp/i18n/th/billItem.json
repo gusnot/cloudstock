@@ -1,0 +1,25 @@
+{
+    "cloudstockApp": {
+        "billItem" : {
+            "home": {
+                "title": "Bill Items",
+                "createLabel": "สร้าง Bill Item",
+                "createOrEditLabel": "สร้างหรือแก้ไข Bill Item",
+                "search": "ค้นหา Bill Item"
+            },
+            "created": "Bill Item ถูกสร้างด้วย {{ param }}",
+            "updated": "Bill Item ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Bill Item ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Bill Item {{ id }}?"
+            },
+            "detail": {
+                "title": "Bill Item"
+            },
+            "sellPrice": "Sell Price",
+            "sellCost": "Sell Cost",
+            "sku": "Sku",
+            "bill": "Bill"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "cloudstockApp": {
+        "TransactionStatus" : {
+            "null": "",
+            "ASSIGNED": "ASSIGNED",
+            "APPROVED": "APPROVED",
+            "REJECTED": "REJECTED"
+        }
+    }
+}

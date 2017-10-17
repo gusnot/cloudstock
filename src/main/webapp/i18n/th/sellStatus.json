@@ -1,0 +1,9 @@
+{
+    "cloudstockApp": {
+        "SellStatus" : {
+            "null": "",
+            "OPENED": "OPENED",
+            "CLOSED": "CLOSED"
+        }
+    }
+}

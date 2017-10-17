@@ -1,0 +1,24 @@
+{
+    "cloudstockApp": {
+        "transferItem" : {
+            "home": {
+                "title": "Transfer Items",
+                "createLabel": "สร้าง Transfer Item",
+                "createOrEditLabel": "สร้างหรือแก้ไข Transfer Item",
+                "search": "ค้นหา Transfer Item"
+            },
+            "created": "Transfer Item ถูกสร้างด้วย {{ param }}",
+            "updated": "Transfer Item ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Transfer Item ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Transfer Item {{ id }}?"
+            },
+            "detail": {
+                "title": "Transfer Item"
+            },
+            "amount": "Amount",
+            "sku": "Sku",
+            "transfer": "Transfer"
+        }
+    }
+}

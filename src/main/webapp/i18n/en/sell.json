@@ -1,0 +1,25 @@
+{
+    "cloudstockApp": {
+        "sell" : {
+            "home": {
+                "title": "Sells",
+                "createLabel": "Create a new Sell",
+                "createOrEditLabel": "Create or edit a Sell",
+                "search": "Search for Sell"
+            },
+            "created": "A new Sell is created with identifier {{ param }}",
+            "updated": "A Sell is updated with identifier {{ param }}",
+            "deleted": "A Sell is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sell {{ id }}?"
+            },
+            "detail": {
+                "title": "Sell"
+            },
+            "refNo": "Ref No",
+            "status": "Status",
+            "bill": "Bill",
+            "branch": "Branch"
+        }
+    }
+}

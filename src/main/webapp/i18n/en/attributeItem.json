@@ -1,0 +1,24 @@
+{
+    "cloudstockApp": {
+        "attributeItem" : {
+            "home": {
+                "title": "Attribute Items",
+                "createLabel": "Create a new Attribute Item",
+                "createOrEditLabel": "Create or edit a Attribute Item",
+                "search": "Search for Attribute Item"
+            },
+            "created": "A new Attribute Item is created with identifier {{ param }}",
+            "updated": "A Attribute Item is updated with identifier {{ param }}",
+            "deleted": "A Attribute Item is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Attribute Item {{ id }}?"
+            },
+            "detail": {
+                "title": "Attribute Item"
+            },
+            "name": "Name",
+            "prefix": "Prefix",
+            "attribute": "Attribute"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "cloudstockApp": {
+        "sku" : {
+            "home": {
+                "title": "Skus",
+                "createLabel": "สร้าง Sku",
+                "createOrEditLabel": "สร้างหรือแก้ไข Sku",
+                "search": "ค้นหา Sku"
+            },
+            "created": "Sku ถูกสร้างด้วย {{ param }}",
+            "updated": "Sku ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Sku ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Sku {{ id }}?"
+            },
+            "detail": {
+                "title": "Sku"
+            },
+            "price": "Price",
+            "cost": "Cost",
+            "code": "Code",
+            "barcode": "Barcode",
+            "product": "Product"
+        }
+    }
+}

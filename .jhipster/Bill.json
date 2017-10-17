@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "billItem",
+            "otherEntityName": "billItem",
+            "otherEntityRelationshipName": "bill"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "branch",
+            "otherEntityName": "branch",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "sell",
+            "otherEntityName": "sell",
+            "otherEntityField": "refNo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "refNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "BillStatus",
+            "fieldValues": "SELLING,WAITING,CANCELLED,SOLD,VOIDED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171014184619",
+    "entityTableName": "bill",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

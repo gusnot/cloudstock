@@ -1,0 +1,26 @@
+{
+    "cloudstockApp": {
+        "transfer" : {
+            "home": {
+                "title": "Transfers",
+                "createLabel": "Create a new Transfer",
+                "createOrEditLabel": "Create or edit a Transfer",
+                "search": "Search for Transfer"
+            },
+            "created": "A new Transfer is created with identifier {{ param }}",
+            "updated": "A Transfer is updated with identifier {{ param }}",
+            "deleted": "A Transfer is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Transfer {{ id }}?"
+            },
+            "detail": {
+                "title": "Transfer"
+            },
+            "refNo": "Ref No",
+            "status": "Status",
+            "transferItem": "Transfer Item",
+            "srcBranch": "Src Branch",
+            "destBranch": "Dest Branch"
+        }
+    }
+}

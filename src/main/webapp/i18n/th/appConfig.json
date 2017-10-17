@@ -1,0 +1,23 @@
+{
+    "cloudstockApp": {
+        "appConfig" : {
+            "home": {
+                "title": "App Configs",
+                "createLabel": "สร้าง App Config",
+                "createOrEditLabel": "สร้างหรือแก้ไข App Config",
+                "search": "ค้นหา App Config"
+            },
+            "created": "App Config ถูกสร้างด้วย {{ param }}",
+            "updated": "App Config ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "App Config ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ App Config {{ id }}?"
+            },
+            "detail": {
+                "title": "App Config"
+            },
+            "key": "Key",
+            "value": "Value"
+        }
+    }
+}

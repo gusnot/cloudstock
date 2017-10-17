@@ -1,0 +1,23 @@
+{
+    "cloudstockApp": {
+        "productType" : {
+            "home": {
+                "title": "Product Types",
+                "createLabel": "สร้าง Product Type",
+                "createOrEditLabel": "สร้างหรือแก้ไข Product Type",
+                "search": "ค้นหา Product Type"
+            },
+            "created": "Product Type ถูกสร้างด้วย {{ param }}",
+            "updated": "Product Type ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Product Type ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Product Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Product Type"
+            },
+            "name": "Name",
+            "prefix": "Prefix"
+        }
+    }
+}

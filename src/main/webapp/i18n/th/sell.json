@@ -1,0 +1,25 @@
+{
+    "cloudstockApp": {
+        "sell" : {
+            "home": {
+                "title": "Sells",
+                "createLabel": "สร้าง Sell",
+                "createOrEditLabel": "สร้างหรือแก้ไข Sell",
+                "search": "ค้นหา Sell"
+            },
+            "created": "Sell ถูกสร้างด้วย {{ param }}",
+            "updated": "Sell ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Sell ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Sell {{ id }}?"
+            },
+            "detail": {
+                "title": "Sell"
+            },
+            "refNo": "Ref No",
+            "status": "Status",
+            "bill": "Bill",
+            "branch": "Branch"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "attributeItems",
+            "otherEntityName": "attributeItem",
+            "otherEntityRelationshipName": "attribute"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171014184608",
+    "entityTableName": "attribute",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

@@ -1,0 +1,24 @@
+{
+    "cloudstockApp": {
+        "branch" : {
+            "home": {
+                "title": "Branches",
+                "createLabel": "สร้าง Branch",
+                "createOrEditLabel": "สร้างหรือแก้ไข Branch",
+                "search": "ค้นหา Branch"
+            },
+            "created": "Branch ถูกสร้างด้วย {{ param }}",
+            "updated": "Branch ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Branch ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Branch {{ id }}?"
+            },
+            "detail": {
+                "title": "Branch"
+            },
+            "name": "Name",
+            "prefix": "Prefix",
+            "address": "Address"
+        }
+    }
+}

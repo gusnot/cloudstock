@@ -1,0 +1,27 @@
+{
+    "cloudstockApp": {
+        "transaction" : {
+            "home": {
+                "title": "Transactions",
+                "createLabel": "สร้าง Transaction",
+                "createOrEditLabel": "สร้างหรือแก้ไข Transaction",
+                "search": "ค้นหา Transaction"
+            },
+            "created": "Transaction ถูกสร้างด้วย {{ param }}",
+            "updated": "Transaction ถูกแก้ไขด้วย {{ param }}",
+            "deleted": "Transaction ถูกลบด้วย {{ param }}",
+            "delete": {
+                "question": "คุณต้องการที่จะลบ Transaction {{ id }}?"
+            },
+            "detail": {
+                "title": "Transaction"
+            },
+            "refNo": "Ref No",
+            "status": "Status",
+            "type": "Type",
+            "reason": "Reason",
+            "transactionItem": "Transaction Item",
+            "branch": "Branch"
+        }
+    }
+}

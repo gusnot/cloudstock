@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transferItem",
+            "otherEntityName": "transferItem",
+            "otherEntityRelationshipName": "transfer"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "srcBranch",
+            "otherEntityName": "branch",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "destBranch",
+            "otherEntityName": "branch",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "refNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "TransactionStatus",
+            "fieldValues": "ASSIGNED,APPROVED,REJECTED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171014184615",
+    "entityTableName": "transfer",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl"
+}

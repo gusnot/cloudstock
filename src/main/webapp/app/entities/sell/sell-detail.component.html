@@ -1,0 +1,35 @@
+
+<div *ngIf="sell">
+    <h2><span jhiTranslate="cloudstockApp.sell.detail.title">Sell</span> {{sell.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="cloudstockApp.sell.refNo">Ref No</span></dt>
+        <dd>
+            <span>{{sell.refNo}}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudstockApp.sell.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'cloudstockApp.SellStatus.' + sell.status}}">{{sell.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudstockApp.sell.branch">Branch</span></dt>
+        <dd>
+            <div *ngIf="sell.branchId">
+                <a [routerLink]="['/branch', sell.branchId]">{{sell.branchName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sell/'+ sell.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

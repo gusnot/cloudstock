@@ -1,0 +1,41 @@
+
+<div *ngIf="billItem">
+    <h2><span jhiTranslate="cloudstockApp.billItem.detail.title">Bill Item</span> {{billItem.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="cloudstockApp.billItem.sellPrice">Sell Price</span></dt>
+        <dd>
+            <span>{{billItem.sellPrice}}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudstockApp.billItem.sellCost">Sell Cost</span></dt>
+        <dd>
+            <span>{{billItem.sellCost}}</span>
+        </dd>
+        <dt><span jhiTranslate="cloudstockApp.billItem.sku">Sku</span></dt>
+        <dd>
+            <div *ngIf="billItem.skuId">
+                <a [routerLink]="['/sku', billItem.skuId]">{{billItem.skuCode}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="cloudstockApp.billItem.bill">Bill</span></dt>
+        <dd>
+            <div *ngIf="billItem.billId">
+                <a [routerLink]="['/bill', billItem.billId]">{{billItem.billRefNo}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'bill-item/'+ billItem.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

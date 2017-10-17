@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "sku",
+            "otherEntityName": "sku",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "transfer",
+            "otherEntityName": "transfer",
+            "otherEntityField": "refNo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "amount",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20171014184616",
+    "entityTableName": "transfer_item",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

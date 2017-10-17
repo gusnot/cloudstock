@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "sku",
+            "otherEntityName": "sku",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "bill",
+            "otherEntityName": "bill",
+            "otherEntityField": "refNo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "sellPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sellCost",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20171014184620",
+    "entityTableName": "bill_item",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

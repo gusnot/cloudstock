@@ -1,0 +1,11 @@
+{
+    "cloudstockApp": {
+        "TransactionType" : {
+            "null": "",
+            "ADD": "ADD",
+            "DELETE": "DELETE",
+            "ADJUST": "ADJUST",
+            "COUNT": "COUNT"
+        }
+    }
+}

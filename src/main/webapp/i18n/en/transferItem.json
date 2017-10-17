@@ -1,0 +1,24 @@
+{
+    "cloudstockApp": {
+        "transferItem" : {
+            "home": {
+                "title": "Transfer Items",
+                "createLabel": "Create a new Transfer Item",
+                "createOrEditLabel": "Create or edit a Transfer Item",
+                "search": "Search for Transfer Item"
+            },
+            "created": "A new Transfer Item is created with identifier {{ param }}",
+            "updated": "A Transfer Item is updated with identifier {{ param }}",
+            "deleted": "A Transfer Item is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Transfer Item {{ id }}?"
+            },
+            "detail": {
+                "title": "Transfer Item"
+            },
+            "amount": "Amount",
+            "sku": "Sku",
+            "transfer": "Transfer"
+        }
+    }
+}

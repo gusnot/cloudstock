@@ -1,0 +1,12 @@
+{
+    "cloudstockApp": {
+        "BillStatus" : {
+            "null": "",
+            "SELLING": "SELLING",
+            "WAITING": "WAITING",
+            "CANCELLED": "CANCELLED",
+            "SOLD": "SOLD",
+            "VOIDED": "VOIDED"
+        }
+    }
+}
